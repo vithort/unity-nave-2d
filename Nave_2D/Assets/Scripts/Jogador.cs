@@ -10,10 +10,18 @@ public class Jogador : MonoBehaviour
     private Rigidbody2D rb2d;
     [SerializeField]
     private float velocidade;
+    [SerializeField]
+    private GameObject instanciarBombas;
+    [SerializeField]
+    private GameObject prefabBomba;
+    private float controle;
+    [SerializeField]
+    private float atirarTempo;
 
     // Start is called before the first frame update
     void Start()
     {
+        controle = 0f;
         rb2d = GetComponent<Rigidbody2D>();
     }
 
@@ -27,12 +35,18 @@ public class Jogador : MonoBehaviour
     {
         moverHorizontal = Input.GetAxis("Horizontal");
         moverVertical = Input.GetAxis("Vertical");
-
         // Debug.Log(moverHorizontal);
-
         mover = new Vector2(moverHorizontal, moverVertical);
         rb2d.velocity = mover * velocidade;
-
         // Debug.Log(rb2d.velocity);
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (Time.time > controle)
+            {
+                controle = Time.time + atirarTempo;
+                Instantiate(prefabBomba, instanciarBombas.transform.position, prefabBomba.transform.rotation);
+            }
+            
+        }
     }
 }
