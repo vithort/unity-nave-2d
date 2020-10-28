@@ -8,6 +8,7 @@ public class Jogador : MonoBehaviour
     private float moverVertical;
     private Vector2 mover;
     private Rigidbody2D rb2d;
+    private AudioSource audioSource;
     [SerializeField]
     private float velocidade;
     [SerializeField]
@@ -23,6 +24,7 @@ public class Jogador : MonoBehaviour
     {
         controle = 0f;
         rb2d = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -45,6 +47,7 @@ public class Jogador : MonoBehaviour
             {
                 controle = Time.time + atirarTempo;
                 Instantiate(prefabBomba, instanciarBombas.transform.position, prefabBomba.transform.rotation);
+                audioSource.Play();
             }
             
         }
