@@ -18,11 +18,18 @@ public class Jogador : MonoBehaviour
     private float controle;
     [SerializeField]
     private float atirarTempo;
+    private float eixoXMin, eixoXMax;
+    private float eixoYMin, eixoYMax;
+    private float posicaoX, posicaoY;
 
     // Start is called before the first frame update
     void Start()
     {
         controle = 0f;
+        eixoXMax = CameraPrincipal.LimitarDireitaX(transform.position);
+        eixoXMin = CameraPrincipal.LimitarEsquerdaX(transform.position);
+        eixoYMax = CameraPrincipal.LimitarParaCimaY(transform.position);
+        eixoYMin = CameraPrincipal.LimitarParaBaixoY(transform.position);
         rb2d = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
     }
@@ -50,6 +57,24 @@ public class Jogador : MonoBehaviour
                 audioSource.Play();
             }
             
+        }
+        LimitarPosicaoJogador();
+    }
+
+    void LimitarPosicaoJogador()
+    {
+        posicaoX = rb2d.position.x; // transform.position.x;
+        posicaoY = rb2d.position.y;
+        posicaoX = Mathf.Clamp(posicaoX, eixoXMin, eixoXMax);
+        posicaoY = Mathf.Clamp(posicaoY, eixoYMin, eixoYMax);
+
+        if (posicaoX != transform.position.x)
+        {
+            rb2d.position = new Vector2(posicaoX, rb2d.position.y);
+        }
+        if (posicaoY != transform.position.y)
+        {
+            rb2d.position = new Vector2(rb2d.position.x, posicaoY);
         }
     }
 }
