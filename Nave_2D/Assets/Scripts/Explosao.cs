@@ -1,25 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
-public class Explosao : MonoBehaviour
-{
+public class Explosao : MonoBehaviour {
 
     [SerializeField]
     private float tempo;
+	// Use this for initialization
+	void Start () {
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        if(GetComponent<AudioSource>() != null)
+
+        if (GetComponent<AudioSource>() != null)
             GetComponent<AudioSource>().Play();
             Destroy(gameObject, tempo);
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	}
+	
+	
 }
