@@ -7,6 +7,7 @@ TagManager:
   - Bomba
   - Asteroide
   - Inimigo
+  - Energia
   layers:
   - Default
   - TransparentFX

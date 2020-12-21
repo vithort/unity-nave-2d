@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8391395899521465212}
   - component: {fileID: 7524028458353407062}
   - component: {fileID: 100433868951205337}
+  - component: {fileID: -9094517594869056100}
   m_Layer: 0
   m_Name: Projetil
   m_TagString: Bomba
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5316229641349249652}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.189426, y: -2.4531748, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -121,3 +122,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-9094517594869056100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5316229641349249652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d83d24ff800aa1348a401e2d7d78aab2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidade: -3.5
