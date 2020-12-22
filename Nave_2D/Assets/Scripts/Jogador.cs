@@ -125,7 +125,7 @@ public class Jogador : MonoBehaviour
             {
                 Instantiate(prefabExplosao, transform.position, transform.rotation);
                 Destroy(gameObject);
-                // GameOver
+                Mensagens.gameOver = true;
             }
         }
     }
