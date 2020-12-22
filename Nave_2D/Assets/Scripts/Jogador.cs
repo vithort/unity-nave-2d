@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Jogador : MonoBehaviour
 {
+
+    [SerializeField]
+    private Estado estado;
+
+    Animator animator;
+
     private float moverHorizontal;
     private float moverVertical;
     private Vector2 mover;
@@ -15,6 +21,8 @@ public class Jogador : MonoBehaviour
     private GameObject instanciarBombas;
     [SerializeField]
     private GameObject prefabBomba;
+    [SerializeField]
+    private GameObject prefabExplosao;
     private float controle;
     [SerializeField]
     private float atirarTempo;
@@ -22,9 +30,15 @@ public class Jogador : MonoBehaviour
     private float eixoYMin, eixoYMax;
     private float posicaoX, posicaoY;
 
+    void Awake()
+    {
+        estado.Iniciar();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         controle = 0f;
         eixoXMax = CameraPrincipal.LimitarDireitaX(transform.position);
         eixoXMin = CameraPrincipal.LimitarEsquerdaX(transform.position);
@@ -78,11 +92,21 @@ public class Jogador : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter2D(Collider2D outro)
+    {
+        PerderVida(outro);
+        GanharVida(outro);
+    }
+
     void GanharVida(Collider2D outro)
     {
         if (outro.tag == "Energia")
         {
-
+            if (estado.ValorAtual < estado.MaximoValor)
+            {
+                estado.ValorAtual += 2;
+                Destroy(outro.gameObject);
+            }
         }
 
     }
@@ -91,7 +115,18 @@ public class Jogador : MonoBehaviour
     {
         if (outro.tag == "Asteroide" || outro.tag == "Inimigo")
         {
+            if (estado.ValorAtual > 0)
+            {
+                estado.ValorAtual -= 10;
+                animator.SetTrigger("Dano");
+            }
 
+            if (estado.ValorAtual <= 0)
+            {
+                Instantiate(prefabExplosao, transform.position, transform.rotation);
+                Destroy(gameObject);
+                // GameOver
+            }
         }
     }
 }

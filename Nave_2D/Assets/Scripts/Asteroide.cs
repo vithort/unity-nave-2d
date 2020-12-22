@@ -43,23 +43,23 @@ public class Asteroide : MonoBehaviour {
         if (outro.tag == "Bomba")
         {
             Instantiate(prefabExplosao1, transform.position, transform.rotation);
-       
 
-        if(tempoVida > 0)
-        {
+            if(tempoVida > 0)
+            {
 
-            tempoVida--;
-        }
+                tempoVida--;
+            }
 
-        if (tempoVida <= 0)
-        {
-            Instantiate(prefabExplosao2, transform.position, transform.rotation);
+            if (tempoVida <= 0)
+            {
+                Instantiate(prefabExplosao2, transform.position, transform.rotation);
 
-                Mensagens.pontos += valorAsteroide;
+                    Mensagens.pontos += valorAsteroide;
 
-                Destroy(gameObject);
+                    Destroy(gameObject);
 
-        }
+            }
+
             Destroy(outro.gameObject);
 
         }

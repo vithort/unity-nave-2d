@@ -9881,6 +9881,27 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 876236739511706467, guid: da24a115f4113164696bcb12d7a1cf18,
+        type: 3}
+      propertyPath: estado.maximoValor
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 876236739511706467, guid: da24a115f4113164696bcb12d7a1cf18,
+        type: 3}
+      propertyPath: estado.valorAtual
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 876236739511706467, guid: da24a115f4113164696bcb12d7a1cf18,
+        type: 3}
+      propertyPath: estado.bar
+      value: 
+      objectReference: {fileID: 1556469247}
+    - target: {fileID: 876236739511706467, guid: da24a115f4113164696bcb12d7a1cf18,
+        type: 3}
+      propertyPath: prefabExplosao
+      value: 
+      objectReference: {fileID: 5469903480243162393, guid: 366ed322435d6b04893d7183aab914b4,
+        type: 3}
     - target: {fileID: 876236739511706469, guid: da24a115f4113164696bcb12d7a1cf18,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10314,6 +10335,7 @@ GameObject:
   - component: {fileID: 1556469244}
   - component: {fileID: 1556469246}
   - component: {fileID: 1556469245}
+  - component: {fileID: 1556469247}
   m_Layer: 5
   m_Name: BarVidas
   m_TagString: Untagged
@@ -10379,6 +10401,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556469243}
   m_CullTransparentMesh: 0
+--- !u!114 &1556469247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556469243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20bc8dbcf6372234f8f8bbf1f516ba37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texto: {fileID: 1196429792}
+  conteudo: {fileID: 1033668754}
+  lerpVelocidade: 2
+  corAlta: {r: 0.10980393, g: 0.7019608, b: 0.16078432, a: 1}
+  corBaixa: {r: 0.43543077, g: 0.8962264, b: 0.4759061, a: 1}
+  lerpCor: 1
 --- !u!1 &1775368001
 GameObject:
   m_ObjectHideFlags: 0
