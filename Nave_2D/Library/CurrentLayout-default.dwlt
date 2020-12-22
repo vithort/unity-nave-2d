@@ -325,7 +325,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: b0230000
     m_LastClickedID: 9136
-    m_ExpandedIDs: 00000000a63a0000
+    m_ExpandedIDs: 00000000d83a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -353,7 +353,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a63a0000
+    m_ExpandedIDs: 00000000d83a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -501,7 +501,7 @@ MonoBehaviour:
     m_LockTracker:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
-  m_WindowGUID: 190ecc4a826718547be0513099ba2541
+  m_WindowGUID: e8cc0fe3f9d96ec4084102c2e988de9e
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -529,7 +529,7 @@ MonoBehaviour:
     height: 790
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
-  m_WindowGUID: f742b579f66f4dd46badb80565528a14
+  m_WindowGUID: c64e6e151936a6944963ece8dfe1c8e4
   m_Gizmos: 1
   m_SceneIsLit: 1
   m_SceneLighting: 1
